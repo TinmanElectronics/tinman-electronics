@@ -1,0 +1,25 @@
+#header {
+    background-color: black;
+}
+
+#nav {
+    background-color: green;
+}
+
+#sidebar {
+    background-color: yellow;
+    float: left;
+    width: 30%;
+}
+
+#content {
+    background-color: red;
+    float: left;
+    width: 70%;
+}
+
+#footer {
+    background-color: blue;
+    clear: both;
+    width: 100%;
+}
