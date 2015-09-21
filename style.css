@@ -1,25 +1,78 @@
+/*************************************************
+   TINMAN ELECTRONICS
+   project: tinmanelectronics.com website
+   file:    style.css
+   author:  Justin R. St-Amant
+   date:    2015-09-20
+*************************************************/
+
 #header {
-    background-color: black;
+  padding: 1%;
+}
+
+#logo-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#title-wrapper {
+  display: inline-block;
+  padding-left: 1%;
+  vertical-align: middle;
 }
 
 #nav {
-    background-color: green;
+  padding: 0.2% 0;
+  border-bottom: 2px solid black;
+}
+
+#nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav li {
+  display: inline;
+  padding: 0 1%;
+}
+
+#sidebar-wrapper {
+  width: 15%;
+  float: left;
 }
 
 #sidebar {
-    background-color: yellow;
-    float: left;
-    width: 30%;
+  background-color: grey;
+  border-radius: 10px;
+  margin: 1%;
+  padding: 5%;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#content-wrapper {
+  float: left;
+  width: 85%;
 }
 
 #content {
-    background-color: red;
-    float: left;
-    width: 70%;
+  padding: 2%;
 }
 
 #footer {
-    background-color: blue;
-    clear: both;
-    width: 100%;
+  border-top: 2px solid black;
+  clear: both;
+  width: 100%;
+}
+
+/*************************************************
+DEBUG
+*************************************************/
+.red {
+  background-color: red;
 }
