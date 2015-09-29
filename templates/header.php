@@ -1,14 +1,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="stylesheet" type="text/css" href="/style.css"/>
-    <link rel="icon" type="image/png" href="/favicon.png"/>
+    <link rel="icon" type="image/png" href="/favicon.ico"/>
     <title>Tinman Electronics</title>
   </head>
   <body>
     <div id="header-wrapper">
       <div id="header">
         <div id="logo-wrapper">
-          <img src="logo.png" alt="Tinman Electronics logo"/>
+          <img src="/logo.png" alt="Tinman Electronics logo"/>
         </div><!-- #logo-wrapper -->
         <div id="title-wrapper">
           <h1>Tinman Electronics</h1>

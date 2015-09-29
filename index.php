@@ -3,9 +3,10 @@
 
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
-$content_base = $root . "/content/";
+$content_base = $root . "/content";
 $path = $_SERVER['REQUEST_URI'];
 $filename = basename($path);
+$path_parts = pathinfo($root . "/content" . $path);
 
 include($root . "/templates/header.php");
 include($root . "/templates/nav.php");
@@ -18,13 +19,25 @@ include($root . "/templates/sidebar.php");
 
 <div id="content-wrapper">
   <div id="content">
-    
+
     <?php
     //Figure out what gets served
-    if ($path == "/") {
-      include($content_base . "index.php"); //default home page
+    if (is_dir($content_base . $path)) {
+      //For main pages, serve the <*.php> file, since it contains further processing
+      if (file_exists($content_base . $path . "/index.php")) {
+        include($content_base . $path . "/index.php");
+      } else {
+        //For smaller pages, just serve the content found in it's <*.xml> file
+        $parser = simplexml_load_file($content_base . $path . "/index.xml");
+        echo "<h1>" . $parser->title . "</h1>";
+        foreach ($parser->content->children() as $content) {
+          echo $content->asXML();
+        }
+      }
+    } else {
+      //For other media such as images,
+      //include($content_base . $path);
     }
-    include($content_base . $filename);
     ?>
     
   </div><!-- #content -->
