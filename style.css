@@ -64,6 +64,32 @@
   padding: 2%;
 }
 
+/*
+.video-post {
+  background-color: lightgrey;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  padding: 2%;
+}
+*/
+.video-showcase {
+  background-color: lightgrey;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  padding: 2%;
+}
+
+.video-post .thumbnail {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.video-post .summary {
+  display: inline-block;
+  padding-left: 2%;
+  vertical-align: middle;
+}
+
 #footer {
   border-top: 2px solid black;
   clear: both;
