@@ -1,0 +1,10 @@
+
+<div id="nav">
+  <ul>
+    {% for page in pages %}
+      {% if not page.date %} {# check if the page isn't a blog post #}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div><!-- #nav -->

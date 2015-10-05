@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>{{ site_title }}</title>
+    {% if meta.description %}
+      <meta name="description" content="{{ meta.description }}" /> 
+    {% endif %}{% if meta.robots %}
+      <meta name="robots" content="{{ meta.robots }}" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
+    <link rel="icon" type="image/png" href="{{ theme_url }}/favicon.ico"/>
+  </head>
+  <body>
+    {% include "header.html" %}
+
+    {% include "nav.html" %}
+    
+    <div id="body">
+      {% include "sidebar.html" %}
+      
+      <div id="content-wrapper">
+        <div id="content">
+
+          {% block content %}
+            
+            {{ content }}
+
+            {# Show the most recent news in Tinman Electronics #}
+            <h2>News</h2>
+            {% for page in pages|slice(0, 3) %}
+              {% if page.date %}
+                <p><strong>{{ page.title }}</strong>, {{ page.date }}, {{ page.content }}</p>
+              {% endif %}
+            {% endfor %}
+
+          {% endblock %}
+          
+        </div><!-- #content -->
+      </div><!-- #content-wrapper -->
+    </div><!-- #body -->
+    
+    {% include "footer.html" %}
+    
+  </body>
+</html>

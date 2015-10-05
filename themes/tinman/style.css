@@ -6,7 +6,16 @@
    date:    2015-09-20
 *************************************************/
 
+* {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+body {
+  margin: 0%;
+}
+
 #header {
+  background-color: #CC0;
   padding: 1%;
 }
 
@@ -22,8 +31,9 @@
 }
 
 #nav {
-  padding: 0.2% 0;
+  background-color: #CC0;
   border-bottom: 2px solid black;
+  padding: 0.2% 0;
 }
 
 #nav ul {
@@ -37,15 +47,19 @@
   padding: 0 1%;
 }
 
+#body {
+  display: table;
+  width: 100%;
+}
+
 #sidebar-wrapper {
+  background-color: grey;
+  display: table-cell;
+  vertical-align: top;
   width: 15%;
-  float: left;
 }
 
 #sidebar {
-  background-color: lightgrey;
-  border-radius: 10px;
-  margin: 1%;
   padding: 5%;
 }
 
@@ -56,7 +70,8 @@
 }
 
 #content-wrapper {
-  float: left;
+  background-color: lightgrey;
+  display: table-cell;
   width: 85%;
 }
 
@@ -64,16 +79,21 @@
   padding: 2%;
 }
 
-/*
-.video-post {
-  background-color: lightgrey;
-  border-radius: 10px;
-  margin-bottom: 1%;
-  padding: 2%;
+.post {
+  /*background-color: grey;*/
+  margin-bottom: 2%;
 }
-*/
+
+.post * {
+  margin: 0;
+}
+
+.post div {
+  margin-bottom: 1%;
+}
+
 .video-showcase {
-  background-color: lightgrey;
+  background-color: grey;
   border-radius: 10px;
   margin-bottom: 1%;
   padding: 2%;
@@ -90,10 +110,14 @@
   vertical-align: middle;
 }
 
+#footer-wrapper {
+  background-color: #2A2A2A;
+  /*border-top: 2px solid black;*/
+}
+
 #footer {
-  border-top: 2px solid black;
-  clear: both;
-  width: 100%;
+  color: #BEBEBE;
+  padding: 1%;
 }
 
 /*************************************************

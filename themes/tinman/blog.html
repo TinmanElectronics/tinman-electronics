@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+  {% for page in pages %}
+    {% if page.date %} {# Determine if the page is a blog post #}
+      <div class="post">
+        <div class="post-meta">
+          <h2>{{ page.title }}</h2>
+          <p>Posted on {{ page.date }}</p>
+        </div>
+        <div class="post-content">
+          {{ page.excerpt }}
+        </div>
+        <div class="post-options">
+          <p>See full post...</p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}
