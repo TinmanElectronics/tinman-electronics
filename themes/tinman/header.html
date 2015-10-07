@@ -1,12 +1,22 @@
 
-<div id="header-wrapper">
-  <div id="header">
-    <div id="logo-wrapper">
+<div id="header">
+  <div id="banner">
+    <a id="logo-wrapper" href="{{ base_url }}">
       <img src="/logo.png" alt="Tinman Electronics logo"/>
-    </div><!-- #logo-wrapper -->
+    </a>
     <div id="title-wrapper">
       <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
-      <h2>Loving electronics under all circumstances</h2>
-    </div><!-- #title-wrapper -->
-  </div><!-- #header -->
-</div><!-- #header-wrapper -->
+      <p><a href="{{ base_url }}">Loving electronics under all circumstances</a></p>
+    </div>
+  </div>
+
+  <div id="nav">
+    <ul>
+      {% for page in pages %}
+        {% if not page.date %} {# check if the page isn't a blog post #}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

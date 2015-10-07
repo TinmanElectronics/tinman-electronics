@@ -2,18 +2,23 @@
 
 {% block content %}
 
-  {% for page in pages %}
-    {% if page.date %} {# Determine if the page is a blog post #}
+  {% for item in meta %}
+    {{ item }}
+  {% endfor %}
+
+  {% for post in pages %}
+    {% if post.date and post.url matches "%.*blog%" %} {# Determine if the page is a blog post #}
+      {{ post.url }}
       <div class="post">
         <div class="post-meta">
-          <h2>{{ page.title }}</h2>
-          <p>Posted on {{ page.date }}</p>
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p>Posted on {{ post.date }}</p>
         </div>
         <div class="post-content">
-          {{ page.excerpt }}
+          {{ post.excerpt }}
         </div>
         <div class="post-options">
-          <p>See full post...</p>
+          <p><a href="{{ post.url }}">See full post...</a></p>
         </div>
       </div>
     {% endif %}

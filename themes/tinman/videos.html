@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+  <h1><a href="https://www.youtube.com/channel/UCPK-tIF2tVaYF65psGn8Dlg">Tinman Electronics Youtube Channel</a></h1>
+
+  {{ content }}
+
+  {# Generate a featured video section for specified videos #}
+  {% for video in pages %}
+    {% if video.url matches "%videos/[0-9]{3}%" %}
+      <div class="featured-video">
+        <img src="/content/{{ video.url }}thumbnail.jpg" alt="Video thumbnail" />
+        <h2>{{ video.title }}</h2>
+        <p>{{ video.url }}</p>
+        {{ video.content }}
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <!--
+  <div class="featured-video">
+    <h2>Tinman Electronics 7 - How to interface a quadrature output rotary encoder</h2>
+  </div>
+  <div class="featured-video">
+    <h2>Tinman Electronics 15 - Modyfing the Fender Hot Rod Deluxe III</h2>
+  </div>
+  <div class="featured-video">
+    <h2>Tinman Electronics 3 - First time lead-free solder user</h2>
+  </div>
+  -->
+
+{% endblock %}

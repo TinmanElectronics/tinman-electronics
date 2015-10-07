@@ -9,31 +9,37 @@
     {% endif %}{% if meta.robots %}
       <meta name="robots" content="{{ meta.robots }}" />
     {% endif %}
-    <link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
+    <link href="{{ theme_url }}/style.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="{{ theme_url }}/favicon.ico"/>
   </head>
   <body>
     {% include "header.html" %}
 
-    {% include "nav.html" %}
-    
     <div id="body">
-      {% include "sidebar.html" %}
+
+      {#{% include "sidebar.html" %}#}
       
       <div id="content-wrapper">
         <div id="content">
-
+          
           {% block content %}
-            
-            {{ content }}
 
-            {# Show the most recent news in Tinman Electronics #}
-            <h2>News</h2>
-            {% for page in pages|slice(0, 3) %}
-              {% if page.date %}
-                <p><strong>{{ page.title }}</strong>, {{ page.date }}, {{ page.content }}</p>
-              {% endif %}
-            {% endfor %}
+            {% if meta.date %}
+              <div class="post">
+                <div class="post-meta">
+                  <h2><a href="{{ meta.url }}">{{ meta.title }}</a></h2>
+                  <p>Posted on {{ meta.date }}</p>
+                </div>
+                <div class="post-content">
+                  {{ content }}
+                </div>
+              </div>
+            {% else %}
+            
+              {{ content }}
+
+            {% endif %}
 
           {% endblock %}
           

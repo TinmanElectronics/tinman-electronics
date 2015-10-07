@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+  {{ content }}
+  
+  {# Show the 3 most recent blog posts #}
+  <h2>News</h2>
+  {% set post_count = 0 %}
+  {% for post in pages %}
+    {% if post.date and post.url matches "%.*blog%" and post_count < 3 %}
+      <div class="post">
+        <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        <p>Posted on {{ post.date }}</p>
+      </div>
+      {% set post_count = post_count + 1 %}
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}
