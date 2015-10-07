@@ -20,31 +20,29 @@
 
       {#{% include "sidebar.html" %}#}
       
-      <div id="content-wrapper">
-        <div id="content">
-          
-          {% block content %}
+      <div id="content">
+        
+        {% block content %}
 
-            {% if meta.date %}
-              <div class="post">
-                <div class="post-meta">
-                  <h2><a href="{{ meta.url }}">{{ meta.title }}</a></h2>
-                  <p>Posted on {{ meta.date }}</p>
-                </div>
-                <div class="post-content">
-                  {{ content }}
-                </div>
+          {% if meta.date %}
+            <div class="post">
+              <div class="post-meta">
+                <h2><a href="{{ meta.url }}">{{ meta.title }}</a></h2>
+                <p>Posted on {{ meta.date }}</p>
               </div>
-            {% else %}
+              <div class="post-content">
+                {{ content }}
+              </div>
+            </div>
+          {% else %}
             
-              {{ content }}
+            {{ content }}
 
-            {% endif %}
+          {% endif %}
 
-          {% endblock %}
-          
-        </div><!-- #content -->
-      </div><!-- #content-wrapper -->
+        {% endblock %}
+        
+      </div><!-- #content -->
     </div><!-- #body -->
     
     {% include "footer.html" %}
