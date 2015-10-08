@@ -3,10 +3,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>{{ site_title }}</title>
+    <title>{{ site_title }}{% if not is_front_page %} - {{ current_page.title }}{% endif %}</title>
     {% if meta.description %}
       <meta name="description" content="{{ meta.description }}" /> 
-    {% endif %}{% if meta.robots %}
+    {% endif %}
+    {% if meta.robots %}
       <meta name="robots" content="{{ meta.robots }}" />
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
