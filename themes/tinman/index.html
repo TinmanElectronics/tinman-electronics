@@ -9,19 +9,20 @@
     {% endif %}{% if meta.robots %}
       <meta name="robots" content="{{ meta.robots }}" />
     {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ theme_url }}/style.css" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
-    <link rel="icon" type="image/png" href="{{ theme_url }}/favicon.ico"/>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css' />
+    <link rel="icon" type="image/png" href="{{ theme_url }}/favicon.ico" />
   </head>
   <body>
     {% include "header.html" %}
 
-    <div id="body">
+    <div id="page">
 
       {#{% include "sidebar.html" %}#}
       
       <div id="content">
-        
+
         {% block content %}
 
           {% if meta.date %}
@@ -42,8 +43,8 @@
 
         {% endblock %}
         
-      </div><!-- #content -->
-    </div><!-- #body -->
+      </div>
+    </div>
     
     {% include "footer.html" %}
     

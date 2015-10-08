@@ -2,32 +2,21 @@
 
 {% block content %}
 
-  <h1><a href="https://www.youtube.com/channel/UCPK-tIF2tVaYF65psGn8Dlg">Tinman Electronics Youtube Channel</a></h1>
+  <h2><a href="https://www.youtube.com/channel/UCPK-tIF2tVaYF65psGn8Dlg">Tinman Electronics Youtube Channel</a></h2>
 
   {{ content }}
 
-  {# Generate a featured video section for specified videos #}
-  {% for video in pages %}
-    {% if video.url matches "%videos/[0-9]{3}%" %}
-      <div class="featured-video">
-        <img src="/content/{{ video.url }}thumbnail.jpg" alt="Video thumbnail" />
-        <h2>{{ video.title }}</h2>
-        <p>{{ video.url }}</p>
-        {{ video.content }}
-      </div>
-    {% endif %}
-  {% endfor %}
-
-  <!--
   <div class="featured-video">
-    <h2>Tinman Electronics 7 - How to interface a quadrature output rotary encoder</h2>
+    <img alt="*" src="/resources/images/video-thumbnail-007.jpg" />
+    <h3>Tinman Electronics 7 - How to interface a quadrature output rotary encoder</h3>
   </div>
   <div class="featured-video">
-    <h2>Tinman Electronics 15 - Modyfing the Fender Hot Rod Deluxe III</h2>
+    <img alt="*" src="/resources/images/video-thumbnail-015.jpg" />
+    <h3>Tinman Electronics 15 - Modyfing the Fender Hot Rod Deluxe III</h3>
   </div>
   <div class="featured-video">
-    <h2>Tinman Electronics 3 - First time lead-free solder user</h2>
+    <img alt="*" src="/resources/images/video-thumbnail-003.jpg" />
+    <h3>Tinman Electronics 3 - First time lead-free solder user</h3>
   </div>
-  -->
 
 {% endblock %}
