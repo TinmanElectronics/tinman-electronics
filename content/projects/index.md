@@ -3,7 +3,7 @@ Title: Projects
 Placing: 4
 */
 
-#Projects
+## Projects
 
 I'm afraid this page is unpopulated at the moment! But I have plans. Ambitions, even! That's engineering!
 

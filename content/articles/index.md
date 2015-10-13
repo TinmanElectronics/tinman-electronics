@@ -1,8 +1,8 @@
 /*
-Title: Article
+Title: Articles
+Template: articles
 Placing: 3
 */
 
-# test heading
+## Articles
 
-some text

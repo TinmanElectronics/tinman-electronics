@@ -3,7 +3,7 @@
 {% block content %}
 
   {% for post in pages %}
-    {% if post.date and post.url matches "%.*blog%" %} {# Determine if the page is a blog post #}
+    {% if post.date and post.url matches "%.*/blog/.*%" %} {# Determine if the page is a blog post #}
       <div class="post">
         <div class="post-meta">
           <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
