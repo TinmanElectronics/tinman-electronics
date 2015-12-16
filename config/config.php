@@ -15,36 +15,38 @@
 /*
  * BASIC
  */
-$config['site_title'] = 'Tinman Electronics';   // Site title
-// $config['base_url'] = '';                    // Override base URL (e.g. http://example.com)
+$config['site_title'] = 'Tinman Electronics';
+//$config['base_url'] = '';      // Override base URL (e.g. http://example.com)
+//$config['rewrite_url'] = null; // A boolean indicating forced URL rewriting
 
 /*
  * THEME
  */
-$config['theme'] = 'tinman';                    // Set the theme (defaults to "default")
-// $config['twig_config'] = array(              // Twig settings
-//	'cache' => false,	                // To enable Twig caching change this to CACHE_DIR
-//	'autoescape' => false,                  // Autoescape Twig vars
-//	'debug' => false                        // Enable Twig debug
-// );
+$config['theme'] = 'tinman';      // Set the theme (defaults to "default")
+//$config['twig_config'] = array( // Twig settings
+//'cache' => false,	              // To enable Twig caching change this to CACHE_DIR
+//'autoescape' => false,          // Autoescape Twig vars
+//'debug' => false                // Enable Twig debug
+//);
 
 /*
  * CONTENT
  */
-$config['date_format'] = '%F';                  // Set the PHP date format as described here: http://php.net/manual/en/function.strftime.php
-$config['pages_order_by'] = 'date';             // Order pages by "alpha" or "date"
-$config['pages_order'] = 'desc';                // Order pages "asc" or "desc"
-$config['excerpt_length'] = 50;                 // The pages excerpt length (in words)
-$config['content_dir'] = 'content/';            // Content directory
+$config['date_format'] = '%F';       // Set the PHP date format
+$config['pages_order_by'] = 'date';  // Order pages by "alpha" or "date"
+$config['pages_order'] = 'desc';     // Order pages "asc" or "desc"
+$config['excerpt_length'] = 50;
+$config['content_dir'] = 'content/';
+$config['content_ext'] = '.md';
 
 /*
  * TIMEZONE
  */
-// date_default_timezone_set('UTC');              // Timezone may be reqired by your php install
+// date_default_timezone_set('UTC'); // Timezone may be reqired by your php install
 
 /*
  * CUSTOM
  */
-//$config['pages_order_by'] = 'placing';          // Defines placing order for navigation
+//$config['pages_order_by'] = 'placing'; // Defines placing order for navigation
 
 return $config;

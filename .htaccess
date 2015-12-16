@@ -1,11 +1,15 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-
-    # If requested file/folder does not exist, generate a 404
+    RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . index.php [L]
+    RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+    RewriteRule ^(config|content|content-sample|lib|vendor)/.* - [R=404,L]
+
+    <IfModule mod_env.c>
+        SetEnv PICO_URL_REWRITING 1
+    </IfModule>
 </IfModule>
 
 # Prevent file browsing
-#Options -Indexes
+Options -Indexes

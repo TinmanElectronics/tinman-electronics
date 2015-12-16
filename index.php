@@ -1,17 +1,26 @@
-<?php
+<?php // @codingStandardsIgnoreFile
 
-define('ROOT_DIR', realpath(dirname(__FILE__)) . '/');
-define('LIB_DIR', ROOT_DIR . 'lib/');
-define('VENDOR_DIR', ROOT_DIR . 'vendor/');
-define('PLUGINS_DIR', ROOT_DIR . 'plugins/');
-define('THEMES_DIR', ROOT_DIR . 'themes/');
-define('CONFIG_DIR', ROOT_DIR . 'config/');
-define('CACHE_DIR', LIB_DIR . 'cache/');
+// load dependencies
+if(is_file(__DIR__ . '/vendor/autoload.php')) {
+    // composer root package
+    require_once(__DIR__ . '/vendor/autoload.php');
+} elseif(is_file(__DIR__ . '/../../../vendor/autoload.php')) {
+    // composer dependency package
+    require_once(__DIR__ . '/../../../vendor/autoload.php');
+} else {
+    die("Cannot find `vendor/autoload.php`. Run `composer install`.");
+}
 
-define('CONTENT_EXT', '.md');
+// instance Pico
+$pico = new Pico(
+    __DIR__,    // root dir
+    'config/',  // config dir
+    'plugins/', // plugins dir
+    'themes/'   // themes dir
+);
 
-require_once(VENDOR_DIR . 'autoload.php');
-require_once(LIB_DIR . 'pico.php');
-$pico = new Pico();
+// override configuration?
+//$pico->setConfig(array());
 
-?>
+// run application
+echo $pico->run();
