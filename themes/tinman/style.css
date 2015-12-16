@@ -27,7 +27,9 @@ a:hover {
 
 body {
   font-size: 100%;
-  margin: 0.5%;
+  margin: 0.5% auto;
+  max-width: 980px;
+  padding: 0 2%;
 }
 
 #banner {
@@ -45,10 +47,15 @@ body {
   vertical-align: middle;
 }
 
+#logo-wrapper img {
+  width: 100%;
+}
+
 #title-wrapper {
   display: inline-block;
   padding-left: 1%;
   vertical-align: middle;
+  width: 60%;
 }
 
 #title-wrapper p {
@@ -86,7 +93,7 @@ body {
 }
 
 #page {
-  display: table;
+  /*display: table;*/
   width: 100%;
 }
 

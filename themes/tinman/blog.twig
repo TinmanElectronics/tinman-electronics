@@ -1,13 +1,15 @@
-{% extends "index.html" %}
+{% extends "index.twig" %}
 
 {% block content %}
+
+  {{ content }}
 
   {% for post in pages %}
     {% if post.date and post.url matches "%.*/blog/.*%" %} {# Determine if the page is a blog post #}
       <div class="post">
         <div class="post-meta">
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          <p>Posted on {{ post.date }}</p>
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p>Posted on {{ post.date_formatted }}</p>
         </div>
         <div class="post-content">
           {{ post.excerpt }}

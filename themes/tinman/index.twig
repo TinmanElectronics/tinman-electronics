@@ -24,21 +24,21 @@
     </script>
   </head>
   <body>
-    {% include "header.html" %}
+
+    {% include "header.twig" %}
 
     <div id="page">
-
-      {#{% include "sidebar.html" %}#}
-      
       <div id="content">
 
         {% block content %}
+
+          {{ meta.url }}
 
           {% if meta.date %}
             <div class="post">
               <div class="post-meta">
                 <h2><a href="{{ meta.url }}">{{ meta.title }}</a></h2>
-                <p>Posted on {{ meta.date }}</p>
+                <p>Posted on {{ meta.date_formatted }}</p>
               </div>
               <div class="post-content">
                 {{ content }}
@@ -55,7 +55,7 @@
       </div>
     </div>
     
-    {% include "footer.html" %}
-    
+    {% include "footer.twig" %}
+
   </body>
 </html>

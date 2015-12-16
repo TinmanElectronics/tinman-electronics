@@ -1,0 +1,25 @@
+{% extends "index.twig" %}
+
+{% block content %}
+
+  {{ content }}
+
+  {% for article in pages %}
+    {% if article.date and article.url matches "%.*article.*%" %}
+      <div class="post">
+        <div class="post-meta">
+          <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+          <p>Posted on {{ article.date_formatted }}</p>
+        </div>
+        <div class="post-content">
+          {{ article.description }}
+        </div>
+        <div class="post-options">
+          <p><a href="{{ article.url }}">See full article...</a></p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+  
+{% endblock %}
+
