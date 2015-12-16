@@ -1,7 +1,0 @@
-#+OPTIONS: num:0 toc:0
-* Title
-Some text under title.
-** Subtitle
-Some text under the subtitle.
-** Another subtitle
-Some text under that.
